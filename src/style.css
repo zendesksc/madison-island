@@ -1,0 +1,35 @@
+/* This is mainly used to override styles from ant.design components */
+
+/* Make the height of tabs auto instead of 100% */
+.ant-tabs-nav .ant-tabs-tab {
+  /* Courtesy of @glound */
+  height: auto;
+}
+
+/* UserContainer */
+
+.UserContainer {
+  margin-bottom: 1rem;
+}
+
+.UserContainerInfo {
+  text-align: center;
+}
+
+.UserContainerAvatar {
+  margin-bottom: 0.5rem;
+}
+
+.UserContainerName {
+  margin: 0;
+}
+
+.UserContainerEmail {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.UserContainerPhone {
+  margin: 0;
+  font-size: 0.9rem;
+}
