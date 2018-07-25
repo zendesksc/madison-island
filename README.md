@@ -1,6 +1,6 @@
 # Madison Island
 
-A mocked demo app for Madison Island
+A mocked customer 360 app for Madison Island.
 
 ## Getting Started
 
