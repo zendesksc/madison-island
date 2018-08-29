@@ -9,6 +9,8 @@ class LoyaltyContainer extends Component {
       status: 'Gold',
       cardNumber: '969504130',
       balance: 103,
+      orders: '12',
+      spent: '$6534',
       table: {
         dataSource: [{
           key: '1',
@@ -52,6 +54,8 @@ class LoyaltyContainer extends Component {
           <div><Icon type="star-o" /> Status: {this.state.status}</div>
           <div><Icon type="credit-card" /> Card Number: {this.state.cardNumber}</div>
           <div><Icon type="book" /> Balance: {this.state.balance}</div>
+          <div><Icon type="tag-o" /> Orders: {this.state.orders}</div>
+          <div><Icon type="wallet" /> Total Spent: {this.state.spent}</div>
         </div>
         <Divider />
         <div>
