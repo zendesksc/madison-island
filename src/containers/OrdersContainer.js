@@ -84,11 +84,22 @@ class OrdersContainer extends Component {
       <div>
         <div>
           <h4>Current Order</h4>
-          <Table columns={this.state.current.table.columns} dataSource={this.state.current.table.dataSource} size="small" />
+          <Table
+            columns={this.state.current.table.columns}
+            dataSource={this.state.current.table.dataSource}
+            size="small"
+            pagination={false}
+          />
         </div>
+        <br />
         <div>
           <h4>Past Orders</h4>
-          <Table columns={this.state.past.table.columns} dataSource={this.state.past.table.dataSource} size="small" />
+          <Table
+            columns={this.state.past.table.columns}
+            dataSource={this.state.past.table.dataSource}
+            size="small"
+            pagination={false}
+          />
         </div>
       </div>
     )
