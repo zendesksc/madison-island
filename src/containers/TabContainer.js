@@ -13,7 +13,7 @@ function callback(key) {
 class TabContainer extends Component {
   render() {
     return (
-      <Tabs defaultActiveKey="3" onChange={callback}>
+      <Tabs defaultActiveKey="1" onChange={callback}>
         <TabPane tab={
           <Tooltip title="Orders" placement="bottom">
             <Icon type="rocket" />
