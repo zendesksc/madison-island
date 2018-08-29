@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import OrdersContainer from './OrdersContainer'
 import LoyaltyContainer from './LoyaltyContainer'
+import BasketContainer from './BasketContainer'
 import { Tabs, Icon, Tooltip } from 'antd';
 
 const TabPane = Tabs.TabPane;
@@ -12,7 +13,7 @@ function callback(key) {
 class TabContainer extends Component {
   render() {
     return (
-      <Tabs defaultActiveKey="2" onChange={callback}>
+      <Tabs defaultActiveKey="3" onChange={callback}>
         <TabPane tab={
           <Tooltip title="Orders" placement="bottom">
             <Icon type="rocket" />
@@ -30,7 +31,7 @@ class TabContainer extends Component {
             <Icon type="shopping-cart" />
             <span>Basket</span>
           </Tooltip>
-        } key="3">Basket</TabPane>
+        } key="3"><BasketContainer /></TabPane>
       </Tabs>
     )
   }
