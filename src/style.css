@@ -1,5 +1,9 @@
 /* This is mainly used to override styles from ant.design components */
 
+table {
+  font-size: 12px;
+}
+
 /* Make the height of tabs auto instead of 100% */
 .ant-tabs-nav .ant-tabs-tab {
   /* Courtesy of @glound */
