@@ -9,15 +9,15 @@ class BasketContainer extends Component {
       table: {
         dataSource: [{
           key: '1',
-          id: '#543-12345',
-          description: 'An item of clothing',
-          price: '£250',
+          id: '#543-81346',
+          description: 'BOHO BRACELET',
+          price: '€50',
           quantity: '1'
         },
         {
           key: '2',
-          id: '#543-12345',
-          description: 'An item of clothing',
+          id: '#293-61943',
+          description: 'VINTAGE SUITCASE',
           price: '£250',
           quantity: '1'
         }],

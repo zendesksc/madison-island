@@ -10,16 +10,16 @@ class OrdersContainer extends Component {
         table: {
           dataSource: [{
             key: '1',
-            id: '#543-12345',
-            description: 'An item of clothing',
-            price: '£250',
+            id: '#384-91742',
+            description: 'Crew Neck Sweater',
+            price: '€25',
             quantity: '1'
           },
           {
             key: '2',
-            id: '#543-12345',
-            description: 'An item of clothing',
-            price: '£250',
+            id: '#436-46291',
+            description: 'Skinny Fit Jeans',
+            price: '€34',
             quantity: '1'
           }],
           columns: [{
@@ -45,16 +45,16 @@ class OrdersContainer extends Component {
         table: {
           dataSource: [{
             key: '1',
-            id: '#543-12345',
-            description: 'An item of clothing',
-            price: '£250',
-            quantity: '1'
+            id: '#567-92711',
+            description: 'Wool Mini Skirt',
+            price: '€25',
+            quantity: '2'
           },
           {
             key: '2',
-            id: '#543-12345',
-            description: 'An item of clothing',
-            price: '£250',
+            id: '#782-73942',
+            description: 'High neck t-shirt',
+            price: '€25',
             quantity: '1'
           }],
           columns: [{
