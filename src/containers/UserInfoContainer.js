@@ -31,11 +31,11 @@ class UserInfoContainer extends Component {
     return (
       <div className="UserInfoContainer">
         <div>
-          <h4>Address</h4>
+          <h4 className="UserInfoTitle">Address</h4>
           <p>{this.state.address}</p>
         </div>
         <div>
-          <h4>Date of Birth</h4>
+          <h4 className="UserInfoTitle">Date of Birth</h4>
           <p>{this.state.date_of_birth}</p>
         </div>
       </div>
