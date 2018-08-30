@@ -52,7 +52,7 @@ class BasketContainer extends Component {
           pagination={false}
         />
         <br />
-        <Button block={true} className="MakePurchaseButton">Make Purchase</Button>
+        <Button block="true" className="MakePurchaseButton">Make Purchase</Button>
       </div>
     )
   }

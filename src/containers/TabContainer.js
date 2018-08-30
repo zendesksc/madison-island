@@ -7,7 +7,20 @@ import { Tabs, Icon, Tooltip } from 'antd';
 const TabPane = Tabs.TabPane;
 
 function callback(key) {
-  console.log(key);
+  switch (key) {
+    case '1':
+      window.client.invoke('resize', { width: '100%', height: '450px' })
+      break
+    case '2':
+      window.client.invoke('resize', { width: '100%', height: '490px' })
+      break
+    case '3':
+      window.client.invoke('resize', { width: '100%', height: '330px' })
+      break
+    default:
+      window.client.invoke('resize', { width: '100%', height: '450px' })
+      break
+  }
 }
 
 class TabContainer extends Component {
