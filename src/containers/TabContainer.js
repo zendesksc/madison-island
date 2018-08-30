@@ -10,7 +10,7 @@ const TabPane = Tabs.TabPane;
 function callback(key) {
   switch (key) {
     case '1':
-      window.client.invoke('resize', { width: '100%', height: '28px' })
+      window.client.invoke('resize', { width: '100%', height: '280px' })
       break
     case '2':
       window.client.invoke('resize', { width: '100%', height: '450px' })
@@ -22,7 +22,7 @@ function callback(key) {
       window.client.invoke('resize', { width: '100%', height: '330px' })
       break
     default:
-      window.client.invoke('resize', { width: '100%', height: '28px' })
+      window.client.invoke('resize', { width: '100%', height: '280px' })
       break
   }
 }
