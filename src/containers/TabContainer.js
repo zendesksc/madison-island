@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import UserInfoContainer from './UserInfoContainer'
 import OrdersContainer from './OrdersContainer'
 import LoyaltyContainer from './LoyaltyContainer'
 import BasketContainer from './BasketContainer'
@@ -9,16 +10,19 @@ const TabPane = Tabs.TabPane;
 function callback(key) {
   switch (key) {
     case '1':
-      window.client.invoke('resize', { width: '100%', height: '450px' })
+      window.client.invoke('resize', { width: '100%', height: '350px' })
       break
     case '2':
-      window.client.invoke('resize', { width: '100%', height: '490px' })
+      window.client.invoke('resize', { width: '100%', height: '450px' })
       break
     case '3':
+      window.client.invoke('resize', { width: '100%', height: '490px' })
+      break
+    case '4':
       window.client.invoke('resize', { width: '100%', height: '330px' })
       break
     default:
-      window.client.invoke('resize', { width: '100%', height: '450px' })
+      window.client.invoke('resize', { width: '100%', height: '350px' })
       break
   }
 }
@@ -28,23 +32,25 @@ class TabContainer extends Component {
     return (
       <Tabs defaultActiveKey="1" onChange={callback}>
         <TabPane tab={
-          <Tooltip title="Orders" placement="bottom">
-            <Icon type="rocket" />
-            <span>Orders</span>
+          <Tooltip title="User Info" placement="bottom">
+            <Icon type="user" />
           </Tooltip>
-        } key="1"><OrdersContainer /></TabPane>
+        } key="1"><UserInfoContainer /></TabPane>
+        <TabPane tab={
+          <Tooltip title="Orders" placement="bottom">
+            <Icon type="book" />
+          </Tooltip>
+        } key="2"><OrdersContainer /></TabPane>
         <TabPane tab={
           <Tooltip title="Loyalty" placement="bottom">
             <Icon type="heart-o" />
-            <span>Loyalty</span>
           </Tooltip>
-        } key="2"><LoyaltyContainer /></TabPane>
+        } key="3"><LoyaltyContainer /></TabPane>
         <TabPane tab={
           <Tooltip title="Basket" placement="bottom">
             <Icon type="shopping-cart" />
-            <span>Basket</span>
           </Tooltip>
-        } key="3"><BasketContainer /></TabPane>
+        } key="4"><BasketContainer /></TabPane>
       </Tabs>
     )
   }
