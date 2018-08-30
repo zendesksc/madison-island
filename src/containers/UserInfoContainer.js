@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Avatar, Row, Col } from 'antd'
 
 class UserInfoContainer extends Component {
   constructor(props) {
