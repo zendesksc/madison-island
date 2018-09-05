@@ -7,9 +7,9 @@ class UserContainer extends Component {
 
     this.state = {
       avatar: '',
-      name: 'Adam Gray',
-      email: 'agray@zendesk.com',
-      phone: '+441234567890'
+      name: '',
+      email: '',
+      phone: ''
     }
   }
 
