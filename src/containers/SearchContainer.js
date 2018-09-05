@@ -38,6 +38,8 @@ class SearchContainer extends Component {
   }
 
   addToTicket(user) {
+    this.setState({ isLoading: true })
+
     window.client.get('ticket.id')
       .then((data) => {
         let id = data['ticket.id']
@@ -55,7 +57,8 @@ class SearchContainer extends Component {
         })
       }).then((data) => {
         window.client.invoke('notify', `${user.name} added to ticket.`)
-        location.reload()
+
+        setTimeout(() => this.props.onRequesterSet(), 2000)
       })
       .catch((err) => window.client.invoke('notify', `${err}`, 'error'))
   }
