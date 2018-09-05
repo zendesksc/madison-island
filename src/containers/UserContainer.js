@@ -14,6 +14,7 @@ class UserContainer extends Component {
   }
 
   componentDidMount() {
+    // Set the height of the app as it might have been squashed in search mode
     window.client.invoke('resize', { width: '100%', height: '280px' })
 
     let requester = {}

@@ -23,6 +23,7 @@ class App extends Component {
       .then((data) => {
         let requester = data['ticket.requester']
 
+        // Only show search when the requester name containers either Caller or Visitor
         if (requester.name.match(/Caller|Visitor/)) {
           this.setMode(MODES.SEARCH)
         } else {
