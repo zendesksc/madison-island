@@ -23,7 +23,14 @@ class SearchContainer extends Component {
     window.client.request(`/api/v2/users/search.json?query=${value}`)
       .then((data) => {
         this.setState({ foundUsers: data.users })
-        window.client.invoke('resize', { width: '100%', height: `${60 * (data.users.length + 1)}px` })
+
+        // If there are less than 10 users returned, change the height of the app to fit them,
+        // if there are more, just set the app height to 280 and make the user scroll
+        if (data.users.length < 10) {
+          window.client.invoke('resize', { width: '100%', height: `${60 * (data.users.length + 1)}px` })
+        } else {
+          window.client.invoke('resize', { width: '100%', height: `280px` })
+        }
       })
       .catch((err) => window.client.invoke('error', `${err}`))
   }
