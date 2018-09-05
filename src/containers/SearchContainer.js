@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, List, Avatar, Icon, Spin } from 'antd';
+import { Input, List, Avatar, Icon, Spin, Tooltip } from 'antd';
 
 const Search = Input.Search
 
@@ -76,7 +76,12 @@ class SearchContainer extends Component {
             itemLayout="horizontal"
             dataSource={this.state.foundUsers}
             renderItem={user => (
-              <List.Item actions={[<a onClick={this.addToTicket.bind(this, user)}>Add to Ticket</a>]}>
+              <List.Item actions={[
+                <a onClick={this.addToTicket.bind(this, user)}>
+                  <Tooltip title="Add to ticket" placement="right">
+                    <Icon type="plus-circle" theme="outlined" />
+                  </Tooltip>
+                </a>]}>
                 <List.Item.Meta
                   avatar={<Avatar src={user.photo !== null ? user.photo.content_url : ""} />}
                   title={user.name}
