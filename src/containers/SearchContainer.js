@@ -23,7 +23,7 @@ class SearchContainer extends Component {
     window.client.request(`/api/v2/users/search.json?query=${value}`)
       .then((data) => {
         this.setState({ foundUsers: data.users })
-        window.client.invoke('resize', { width: '100%', height: '280px' })
+        window.client.invoke('resize', { width: '100%', height: `${60 * (data.users.length + 1)}px` })
       })
       .catch((err) => window.client.invoke('error', `${err}`))
   }
