@@ -18,6 +18,21 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    window.client.get(`ticket.requester`)
+      .then((data) => {
+        let requester = data['ticket.requester']
+
+        if (requester.name.match(/Caller|Visitor/)) {
+          this.setMode(MODES.SEARCH)
+        } else {
+          this.setMode(MODES.USER)
+        }
+
+      })
+      .catch((err) => window.client.invoke('error', `${err}`))
+  }
+
   setMode(mode) {
     this.setState({
       mode: mode

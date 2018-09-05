@@ -14,6 +14,8 @@ class UserContainer extends Component {
   }
 
   componentDidMount() {
+    window.client.invoke('resize', { width: '100%', height: '280px' })
+
     let requester = {}
 
     window.client.get('ticket.requester').then((data) => {

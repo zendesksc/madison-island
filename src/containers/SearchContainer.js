@@ -15,9 +15,16 @@ class SearchContainer extends Component {
     this.searchForUser = this.searchForUser.bind(this)
   }
 
+  componentDidMount() {
+    window.client.invoke('resize', { width: '100%', height: '70px' })
+  }
+
   searchForUser(value) {
     window.client.request(`/api/v2/users/search.json?query=${value}`)
-      .then((data) => this.setState({ foundUsers: data.users }))
+      .then((data) => {
+        this.setState({ foundUsers: data.users })
+        window.client.invoke('resize', { width: '100%', height: '280px' })
+      })
       .catch((err) => window.client.invoke('error', `${err}`))
   }
 
