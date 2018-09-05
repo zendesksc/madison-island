@@ -1,15 +1,47 @@
 import React, { Component } from 'react';
 import UserAppContainer from './containers/UserAppContainer';
+import SearchContainer from './containers/SearchContainer';
 import 'antd/dist/antd.css';
 import './style.css';
 
+const MODES = {
+  SEARCH: 0,
+  USER: 1
+}
+
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      mode: MODES.SEARCH
+    }
+  }
+
+  setMode(mode) {
+    this.setState({
+      mode: mode
+    })
+  }
+
   render() {
-    return (
-      <div className="App">
-        <UserAppContainer />
-      </div>
-    );
+
+    if (this.state.mode === MODES.SEARCH) {
+      return (
+        <div className="App">
+          <SearchContainer onRequesterSet={this.setMode.bind(this, MODES.USER)} />
+        </div>
+      );
+    }
+
+    if (this.state.mode === MODES.USER) {
+      return (
+        <div className="App">
+          <UserAppContainer />
+        </div>
+      );
+    }
+
   }
 }
 
