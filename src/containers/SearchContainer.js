@@ -22,7 +22,7 @@ class SearchContainer extends Component {
   }
 
   addToTicket(user) {
-    client.set('ticket.requester', { email: user.email, name: user.name })
+    window.client.set('ticket.requester', { email: user.email, name: user.name })
       .then(() => window.client.invoke('notify', `${user.name} added to ticket.`))
       .catch((err) => window.client.invoke('error', `${err}`))
   }
