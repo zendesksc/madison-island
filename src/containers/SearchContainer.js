@@ -34,13 +34,30 @@ class SearchContainer extends Component {
           window.client.invoke('resize', { width: '100%', height: `280px` })
         }
       })
-      .catch((err) => window.client.invoke('error', `${err}`))
+      .catch((err) => window.client.invoke('notify', `${err}`, 'error'))
   }
 
   addToTicket(user) {
-    window.client.set('ticket.requester', { email: user.email, name: user.name })
-      .then(() => window.client.invoke('notify', `${user.name} added to ticket.`))
-      .catch((err) => window.client.invoke('error', `${err}`))
+    window.client.get('ticket.id')
+      .then((data) => {
+        let id = data['ticket.id']
+
+        return window.client.request({
+          url: `/api/v2/tickets/${id}.json`,
+          type: 'PUT',
+          dataType: 'json',
+          contentType: 'application/json',
+          data: JSON.stringify({
+            ticket: {
+              requester_id: user.id
+            }
+          })
+        })
+      }).then((data) => {
+        window.client.invoke('notify', `${user.name} added to ticket.`)
+        location.reload()
+      })
+      .catch((err) => window.client.invoke('notify', `${err}`, 'error'))
   }
 
   render() {
@@ -64,7 +81,6 @@ class SearchContainer extends Component {
                 />
               </List.Item>
             )}
-
           />
         </Spin>
       </div >

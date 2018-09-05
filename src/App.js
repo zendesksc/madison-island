@@ -31,7 +31,7 @@ class App extends Component {
         }
 
       })
-      .catch((err) => window.client.invoke('error', `${err}`))
+      .catch((err) => window.client.invoke('notify', `${err}`, 'error'))
   }
 
   setMode(mode) {
