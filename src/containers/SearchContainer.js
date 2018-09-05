@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, List, Avatar } from 'antd';
+import { Input, List, Avatar, Icon, Spin } from 'antd';
 
 const Search = Input.Search
 
@@ -20,9 +20,11 @@ class SearchContainer extends Component {
   }
 
   searchForUser(value) {
+    this.setState({ isLoading: true })
+
     window.client.request(`/api/v2/users/search.json?query=${value}`)
       .then((data) => {
-        this.setState({ foundUsers: data.users })
+        this.setState({ foundUsers: data.users, isLoading: false })
 
         // If there are less than 10 users returned, change the height of the app to fit them,
         // if there are more, just set the app height to 280 and make the user scroll
@@ -45,24 +47,27 @@ class SearchContainer extends Component {
 
     return (
       <div className="SearchContainer">
-        <Search
-          placeholder="Search for a customer."
-          onSearch={this.searchForUser}
-          enterButton />
-        <List
-          itemLayout="horizontal"
-          dataSource={this.state.foundUsers}
-          renderItem={user => (
-            <List.Item actions={[<a onClick={this.addToTicket.bind(this, user)}>Add to Ticket</a>]}>
-              <List.Item.Meta
-                avatar={<Avatar src={user.photo !== null ? user.photo.content_url : ""} />}
-                title={user.name}
-                description={user.email}
-              />
-            </List.Item>
-          )}
-        />
-      </div>
+        <Spin spinning={this.state.isLoading}>
+          <Search
+            placeholder="Search for a customer."
+            onSearch={this.searchForUser}
+            enterButton={<Icon type="search" />} />
+          <List
+            itemLayout="horizontal"
+            dataSource={this.state.foundUsers}
+            renderItem={user => (
+              <List.Item actions={[<a onClick={this.addToTicket.bind(this, user)}>Add to Ticket</a>]}>
+                <List.Item.Meta
+                  avatar={<Avatar src={user.photo !== null ? user.photo.content_url : ""} />}
+                  title={user.name}
+                  description={user.email}
+                />
+              </List.Item>
+            )}
+
+          />
+        </Spin>
+      </div >
     );
 
   }
