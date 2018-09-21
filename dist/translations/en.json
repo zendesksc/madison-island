@@ -1,8 +1,8 @@
 {
   "app": {
-    "name": "Zen Tunes",
-    "short_description": "Play the famous zen tunes in your help desk.",
-    "long_description": "Play the famous zen tunes in your help desk and \n listen to the beats it has to offer.",
+    "name": "Madison Island",
+    "short_description": "The Madison Island Demo App.",
+    "long_description": "The Madison Island Demo App.",
     "installation_instructions": "Simply click install."
   }
 }
