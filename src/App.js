@@ -35,7 +35,6 @@ class App extends Component {
   }
 
   setMode(mode) {
-    console.log('test')
     this.setState({
       mode: mode
     })
